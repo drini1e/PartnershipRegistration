@@ -1,0 +1,580 @@
+<html>
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Register Your Interest</title>
+
+  <style>
+.section-title{
+    width:100%;
+    text-align:center;
+    font-size:16px;
+    font-weight:bold;
+    color:#667B99;
+    margin:22px 0 14px;
+    font-family:Arial, sans-serif;
+    line-height:1.2;
+}
+    :root{
+      --navy:#1f2038;
+      --gold:#C89150;
+      --section:#667b99;
+      --text:#111111;
+      --muted:#285b8f;
+      --border:#C89150;
+      --font: Arial, sans-serif;
+      --w: 720px;
+    }
+
+    body{
+      margin:0;
+      font-family:var(--font);
+      background:#ffffff;
+      color:var(--text);
+      font-size:12px;
+    }
+
+    .page{
+      width:100%;
+      display:flex;
+      justify-content:center;
+      padding:10px 0;
+      background:#ffffff;
+    }
+
+    .card{
+      width:100%;
+      max-width:var(--w);
+      background:#ffffff;
+      border-left:1px solid #d9d9d9;
+      border-right:1px solid #d9d9d9;
+      overflow:hidden;
+    }
+
+    .banner{
+      width:100%;
+      height:130px;
+      display:block;
+      object-fit:cover;
+      background:var(--navy);
+    }
+
+    .card-inner{
+      padding:24px 64px 32px;
+    }
+
+    .title-wrap{
+      text-align:center;
+      margin:0 0 20px;
+    }
+
+    h1{
+      margin:0;
+      font-size:18px;
+      line-height:1.1;
+      font-weight:700;
+      color:#111111;
+    }
+
+    .subtitle{
+      margin:3px 0 0;
+      font-size:12px;
+      color:var(--muted);
+      font-weight:400;
+    }
+
+    .two-col{
+      display:grid;
+      grid-template-columns:1fr 1fr;
+      column-gap:28px;
+      row-gap:0;
+    }
+
+    .form-group{
+      margin:0 0 8px;
+    }
+
+    .label{
+      display:block;
+      font-size:10px;
+      font-weight:700;
+      color:#000000;
+      margin:0 0 3px;
+      line-height:1.2;
+    }
+
+    .req{
+      color:#c00000;
+      font-weight:700;
+    }
+
+    input[type="text"],
+    input[type="date"],
+    select,
+    textarea{
+      width:100%;
+      box-sizing:border-box;
+      border:1px solid var(--border);
+      border-radius:3px;
+      background:#ffffff;
+      color:#111111;
+      font-family:var(--font);
+      font-size:11px;
+      outline:none;
+    }
+
+    input[type="text"],
+    input[type="date"],
+    select{
+      height:22px;
+      padding:2px 6px;
+    }
+
+    textarea{
+      min-height:70px;
+      padding:6px;
+      resize:vertical;
+      line-height:1.3;
+    }
+
+    input[type="text"]:focus,
+    input[type="date"]:focus,
+    select:focus,
+    textarea:focus{
+      border-color:#b47d3e;
+      box-shadow:0 0 0 1px rgba(200,145,80,.25);
+    }
+
+    select{
+      appearance:auto;
+    }
+
+    .box{
+      border:0;
+      background:transparent;
+      padding:0;
+      margin:4px 0 10px;
+    }
+
+    .box-title{
+      font-size:10px;
+      font-weight:700;
+      color:#000000;
+      margin:0 0 5px;
+    }
+
+    .box-sub{
+      display:none;
+    }
+
+    .checklist{
+      display:grid;
+      grid-template-columns:1fr;
+      gap:4px;
+      margin:0;
+      padding:0;
+      list-style:none;
+    }
+
+    .check{
+      display:flex;
+      gap:6px;
+      align-items:center;
+      font-size:11px;
+      line-height:1.2;
+    }
+
+    .check label{
+      cursor:pointer;
+    }
+
+    input[type="checkbox"],
+    input[type="radio"]{
+      width:12px;
+      height:12px;
+      margin:0;
+      accent-color:var(--muted);
+      vertical-align:middle;
+    }
+
+    .optin-row{
+      display:flex;
+      gap:7px;
+      align-items:flex-start;
+      font-size:11px;
+      line-height:1.3;
+      margin:8px 0 0;
+    }
+
+    .optin-row a{
+      color:#0000ee;
+      text-decoration:underline;
+    }
+
+    .actions{
+      display:flex;
+      justify-content:center;
+      margin-top:12px;
+    }
+
+    .btn{
+      width:86%;
+      height:34px;
+      border:0;
+      border-radius:999px;
+      background:var(--gold);
+      color:#ffffff;
+      cursor:pointer;
+      font-size:12px;
+      font-weight:700;
+      font-family:var(--font);
+    }
+
+    .btn:active{
+      transform:translateY(1px);
+    }
+
+    br{ display:none; }
+    .is-hidden{ display:none !important; }
+
+    @media (max-width:720px){
+      .card{ border:0; }
+      .card-inner{ padding:20px 24px 28px; }
+      .two-col{ grid-template-columns:1fr; }
+      .btn{ width:100%; }
+    }
+  </style>
+</head>
+
+<body onload="preFill(); initDynamicUI();">
+  <div class="page">
+    <div class="card">
+      <img class="banner" src="https://suite27.emarsys.net/custloads/788202873/md_66556.png" alt="Banner">
+      <div class="card-inner">
+        <div class="title-wrap">
+          <h1>Register Your Interest</h1>
+          <div class="subtitle">For investors, developers, and operators seeking opportunities at Jeddah Central.</div>
+        </div>
+
+        <form name="ProfileForm" onsubmit="return CheckInputs();" action="https://links.jcd.com.sa/u/register.php" method="get">
+<input type=hidden name="CID" value="788202873">
+<input type=hidden name="SID" value="">
+<input type=hidden name="UID" value="">
+<input type=hidden name="f" value="762">
+<input type=hidden name="p" value="2">
+<input type=hidden name="a" value="r">
+<input type=hidden name="el" value="">
+<input type=hidden name="llid" value="">
+<input type=hidden name="c" value="">
+<input type=hidden name="counted" value="">
+<input type=hidden name="RID" value="">
+<input type=hidden name="mailnow" value="">
+
+<div class="section-title">
+    Company Information
+</div>
+          
+          <div class="form-group"><div class="label">Company <span class="req">*</span></div><input type="text" name="inp_18" maxlength="255" value=""></div>
+
+          <div class="two-col">
+            <div class="form-group">
+            <div class="label">Country or region <span class="req">*</span></div>
+            <select name="inp_14" size="1">
+              <option value=""> </option>
+              <option value="151">Saudi Arabia</option><option value="1">Afghanistan</option><option value="2">Albania</option><option value="3">Algeria</option><option value="4">Andorra</option><option value="5">Angola</option><option value="6">Antigua and Barbuda</option><option value="7">Argentina</option><option value="8">Armenia</option><option value="9">Australia</option><option value="10">Austria</option><option value="11">Azerbaijan</option><option value="12">Bahamas</option><option value="13">Bahrain</option><option value="14">Bangladesh</option><option value="15">Barbados</option><option value="16">Belarus</option><option value="17">Belgium</option><option value="18">Belize</option><option value="19">Benin</option><option value="20">Bhutan</option><option value="21">Bolivia</option><option value="22">Bosnia and Herzegovina</option><option value="23">Botswana</option><option value="24">Brazil</option><option value="25">Brunei Darussalam</option><option value="26">Bulgaria</option><option value="27">Burkina Faso</option><option value="28">Burma</option><option value="29">Burundi</option><option value="30">Cambodia</option><option value="31">Cameroon</option><option value="32">Canada</option><option value="201">Canary Islands</option><option value="33">Cape Verde</option><option value="34">Central African Republic</option><option value="35">Chad</option><option value="36">Chile</option><option value="37">China</option><option value="38">Colombia</option><option value="39">Comoros</option><option value="40">Congo</option><option value="41">Congo, Democratic Republic of the</option><option value="42">Costa Rica</option><option value="43">Cote d'Ivoire</option><option value="44">Croatia</option><option value="45">Cuba</option><option value="46">Cyprus</option><option value="47">Czech Republic</option><option value="48">Denmark</option><option value="49">Djibouti</option><option value="50">Dominica</option><option value="51">Dominican Republic</option><option value="258">East Timor</option><option value="52">Ecuador</option><option value="53">Egypt</option><option value="54">El Salvador</option><option value="55">Equatorial Guinea</option><option value="56">Eritrea</option><option value="57">Estonia</option><option value="58">Ethiopia</option><option value="59">Fiji</option><option value="60">Finland</option><option value="61">France</option><option value="62">Gabon</option><option value="63">Gambia, The</option><option value="64">Georgia</option><option value="65">Germany</option><option value="66">Ghana</option><option value="203">Gibraltar</option><option value="67">Greece</option><option value="198">Greenland</option><option value="68">Grenada</option><option value="69">Guatemala</option><option value="70">Guinea</option><option value="71">Guinea-Bissau</option><option value="72">Guyana</option><option value="73">Haiti</option><option value="74">Honduras</option><option value="205">Hong Kong</option><option value="75">Hungary</option><option value="76">Iceland</option><option value="77">India</option><option value="78">Indonesia</option><option value="79">Iran</option><option value="80">Iraq</option><option value="81">Ireland</option><option value="83">Italy</option><option value="84">Jamaica</option><option value="85">Japan</option><option value="86">Jordan</option><option value="87">Kazakhstan</option><option value="88">Kenya</option><option value="89">Kiribati</option><option value="90">Korea, North</option><option value="91">Korea, South</option><option value="259">Kosovo</option><option value="92">Kuwait</option><option value="93">Kyrgyzstan</option><option value="94">Laos</option><option value="95">Latvia</option><option value="96">Lebanon</option><option value="97">Lesotho</option><option value="98">Liberia</option><option value="99">Libya</option><option value="100">Liechtenstein</option><option value="101">Lithuania</option><option value="102">Luxembourg</option><option value="206">Macau</option><option value="103">Macedonia</option><option value="104">Madagascar</option><option value="105">Malawi</option><option value="106">Malaysia</option><option value="107">Maldives</option><option value="108">Mali</option><option value="109">Malta</option><option value="110">Marshall Islands</option><option value="111">Mauritania</option><option value="112">Mauritius</option><option value="113">Mexico</option><option value="114">Micronesia</option><option value="115">Moldova</option><option value="116">Monaco</option><option value="117">Mongolia</option><option value="202">Montenegro</option><option value="118">Morocco</option><option value="119">Mozambique</option><option value="120">Myanmar</option><option value="121">Namibia</option><option value="122">Nauru</option><option value="123">Nepal</option><option value="204">Netherlands Antilles</option><option value="125">New Zealand</option><option value="126">Nicaragua</option><option value="127">Niger</option><option value="128">Nigeria</option><option value="129">Norway</option><option value="130">Oman</option><option value="131">Pakistan</option><option value="132">Palau</option><option value="133">Palestine</option><option value="134">Panama</option><option value="135">Papua New Guinea</option><option value="136">Paraguay</option><option value="137">Peru</option><option value="138">Philippines</option><option value="139">Poland</option><option value="140">Portugal</option><option value="141">Qatar</option><option value="142">Romania</option><option value="143">Russia</option><option value="144">Rwanda</option><option value="148">Samoa</option><option value="149">San Marino</option><option value="150">São Tomé and Príncipe</option><option value="152">Senegal</option><option value="153">Serbia</option><option value="154">Seychelles</option><option value="155">Sierra Leone</option><option value="156">Singapore</option><option value="157">Slovakia</option><option value="158">Slovenia</option><option value="159">Solomon Islands</option><option value="160">Somalia</option><option value="161">South Africa</option><option value="162">Spain</option><option value="163">Sri Lanka</option><option value="145">St. Kitts and Nevis</option><option value="146">St. Lucia</option><option value="147">St. Vincent and The Grenadines</option><option value="164">Sudan</option><option value="165">Suriname</option><option value="166">Swaziland</option><option value="167">Sweden</option><option value="169">Syria</option><option value="170">Taiwan</option><option value="171">Tajikistan</option><option value="172">Tanzania</option><option value="173">Thailand</option><option value="124">The Netherlands</option><option value="174">Togo</option><option value="175">Tonga</option><option value="176">Trinidad and Tobago</option><option value="177">Tunisia</option><option value="178">Turkey</option><option value="179">Turkmenistan</option><option value="180">Tuvalu</option><option value="181">Uganda</option><option value="182">Ukraine</option><option value="183">United Arab Emirates</option><option value="184">United Kingdom</option><option value="185">United States of America</option><option value="186">Uruguay</option><option value="187">Uzbekistan</option><option value="188">Vanuatu</option><option value="189">Vatican City</option><option value="190">Venezuela</option><option value="191">Vietnam</option><option value="199">Virgin Islands</option><option value="192">Western Sahara</option><option value="193">Yemen</option><option value="194">Yugoslavia</option><option value="195">Zaire</option><option value="196">Zambia</option><option value="197">Zimbabwe</option><option value="257">Isle of Man</option><option value="285">Palestinian territories</option><option value="294">South Sudan</option>
+            </select>
+          </div>
+
+            <div class="form-group"><div class="label">City (office) <span class="req">*</span></div><input type="text" name="inp_43" maxlength="60" value=""></div>
+          </div>
+
+          <div class="form-group"><div class="label">Head Office Address (National Address for Saudi Companies) <span class="req">*</span></div><input type="text" name="inp_41" maxlength="255" value=""></div>
+          <div class="form-group"><div class="label">Company's Website <span class="req">*</span></div><input type="text" name="inp_25" maxlength="255" value=""></div>
+
+          <div class="form-group">
+            <div class="label">Year of Establishment <span class="req">*</span></div>
+            <input type="date" id="establishmentDate" required onchange="syncEstablishmentDate()">
+            <div style="display:none;">
+              <select name="inp_11563[]"><option value=""></option></select>
+              <select name="inp_11563[]"><option value=""></option></select>
+              <input type="text" name="inp_11563[]" value="">
+            </div>
+          </div>
+          <div class="form-group"><div class="label">Main Company’s Activity (according to CR) <span class="req">*</span></div><select name="inp_11565" size=1><option value=""> </option><option value="1">Investment</option><option value="2">Development</option><option value="3">Operation</option><option value="4">Others (specify in interest description box)</option></select></div>
+<div class="form-group">
+    <div class="label">
+        Holding Company <span class="req">*</span>
+    </div>
+
+    <div style="padding-top:6px;">
+
+        <label style="display:flex;align-items:flex-start;gap:8px;margin-bottom:8px;font-weight:normal;">
+            <input type="radio" name="inp_11611" value="1" id="holdingYes" style="margin-top:2px;">
+            <span>Yes (Please specify your real estate development company and contact details)</span>
+        </label>
+
+        <label style="display:flex;align-items:center;gap:8px;font-weight:normal;">
+            <input type="radio" name="inp_11611" value="2" id="holdingNo">
+            <span>No</span>
+        </label>
+
+    </div>
+</div>
+<div class="form-group" id="wrapDevelopmentType">
+    <div class="label">
+        Real Estate Development Type <span class="req">*</span>
+    </div>
+
+    <input
+        type="text"
+        id="developmentType"
+        name="inp_11613"
+        maxlength="255"
+        placeholder="Enter development type">
+</div>
+
+<div class="section-title">
+    Authorized Representative
+</div>
+<div class="two-col">
+            <div class="form-group"><div class="label">First Name <span class="req">*</span></div><input type="text" name="inp_1" maxlength="60" value=""></div>
+            <div class="form-group"><div class="label">Last Name <span class="req">*</span></div><input type="text" name="inp_2" maxlength="60" value=""></div>
+          </div>
+
+          <div class="form-group"><div class="label">Email <span class="req">*</span></div><input type="text" name="inp_3" maxlength="255" value=""></div>
+          <div class="form-group"><div class="label">Mobile <span class="req">*</span></div><input type="text" name="inp_37" maxlength="60" value=""></div>
+
+          <div class="two-col">
+            <div class="form-group"><div class="label">Job Position <span class="req">*</span></div><select name="inp_17" size=1><option value=""> </option><option value="1">Administration</option><option value="2">CEO</option><option value="3">CFO</option><option value="4">CIO</option><option value="5">CMO</option><option value="6">COO</option><option value="7">CTO</option><option value="8">Chairman</option><option value="9">Consultant</option><option value="10">Controller</option><option value="11">Designer</option><option value="12">IT/IS Director</option><option value="13">IT/IS Staff</option><option value="14">Manager</option><option value="15">PR/Marketing</option><option value="16">President</option><option value="17">Press/Journalist</option><option value="18">Product/Brand Management</option><option value="19">Sales/Business Development</option><option value="20">Supervisor</option><option value="21">System Integrator</option><option value="22">VP Marketing</option><option value="23">VP Sales</option><option value="24">Self-employed</option><option value="25">Intern</option><option value="26">Student</option><option value="27">Retired</option><option value="28">Unemployed</option><option value="29">Home</option><option value="30">Other</option></select></div>
+            <div class="form-group"><div class="label">Department <span class="req">*</span></div><select name="inp_19" size=1><option value=""> </option><option value="1">E-Commerce</option><option value="2">Executive</option><option value="3">Finance</option><option value="4">Information Technology</option><option value="5">Investments</option><option value="6">Manufacturing</option><option value="7">Marketing</option><option value="8">New Business</option><option value="9">New Media</option><option value="10">Operations</option><option value="11">PR/Communications</option><option value="12">Research & Development</option><option value="13">Sales</option><option value="14">Telecommunications</option><option value="15">Human Resources</option><option value="16">Customer Service/Support</option><option value="17">Other</option></select></div>
+          </div>
+
+          <div class="form-group" id="wrapEngagement"><div class="label">Engagement Type <span class="req">*</span></div><select id="engagementType" name="inp_8783" size="1"><option value="">Choose one</option><option value="1">Developers</option><option value="2">Investors</option><option value="3">Operators</option><option value="4">Others</option></select></div>
+
+          <div class="box" id="wrapInterests">
+            <div class="box-title">Interests <span class="req">*</span></div>
+            <div class="box-sub">Please select one or more options</div>
+            <ul class="checklist" id="interestDev">
+              <li class="check"><input type="checkbox" id="dev27" name="interest[]" value="27"><label for="dev27">Mixed Use</label></li>
+              <li class="check"><input type="checkbox" id="dev1" name="interest[]" value="1"><label for="dev1">Residential</label></li>
+              <li class="check"><input type="checkbox" id="dev6" name="interest[]" value="6"><label for="dev6">Hospitality</label></li>
+              <li class="check"><input type="checkbox" id="dev32" name="interest[]" value="32"><label for="dev32">Others</label></li>
+            </ul>
+            <ul class="checklist" id="interestInv">
+              <li class="check"><input type="checkbox" id="inv29" name="interest[]" value="29"><label for="inv29">Land Purchase</label></li>
+              <li class="check"><input type="checkbox" id="inv30" name="interest[]" value="30"><label for="inv30">Land Lease</label></li>
+              <li class="check"><input type="checkbox" id="inv31" name="interest[]" value="31"><label for="inv31">Investment Equity</label></li>
+              <li class="check"><input type="checkbox" id="inv32" name="interest[]" value="32"><label for="inv32">Others</label></li>
+            </ul>
+            <ul class="checklist" id="interestOp">
+              <li class="check"><input type="checkbox" id="op6" name="interest[]" value="6"><label for="op6">Hospitality</label></li>
+              <li class="check"><input type="checkbox" id="op28" name="interest[]" value="28"><label for="op28">Retail</label></li>
+              <li class="check"><input type="checkbox" id="op32" name="interest[]" value="32"><label for="op32">Others</label></li>
+            </ul>
+          </div>
+
+          <div class="form-group" id="wrapInvestment"><div class="label">Target Investment Size SAR <span class="req">*</span></div><select id="investmentSize" name="inp_10715" size=1><option value=""> </option><option value="1">500 million - 1 billion </option><option value="2">1 billion – 2 billion </option><option value="3">2+ billion </option></select></div>
+          <div class="form-group" id="wrapRealEstate"><div class="label">Number of years in real estate development <span class="req">*</span></div><select id="realEstateExp" name="inp_11569" size=1><option value=""> </option><option value="1">Less than 10 years</option><option value="2">10 to 15 years</option><option value="3">Above 15 years</option></select></div>
+          <div class="form-group" id="wrapDevExp"><div class="label">Experience in large-scale or masterplan developments <span class="req">*</span></div><select id="developmentExp" name="inp_11570" size=1><option value=""> </option><option value="1">Yes</option><option value="2">No</option></select></div>
+          <div class="form-group" id="wrapPif"><div class="label">Have you previously worked with PIF or any of its subsidiaries? <span class="req">*</span></div><select id="pifEngagement" name="inp_11568" size=1><option value=""> </option><option value="1">Yes</option><option value="2">No</option></select></div>
+          <div class="form-group" id="wrapDesc"><div class="label">Interest Description <span class="req">*</span></div><textarea id="interestDesc" name="inp_10714" maxlength="255" placeholder="Please briefly describe your interest or concept (max 255 characters)"></textarea></div>
+
+          <div class="optin-row"><input tabindex="883" type="checkbox" id="privacy" name="privacy" required><span>I confirm that I have read and understood the <a href="https://www.jeddahcentral.com/en/terms-and-conditions" target="_blank" rel="noopener noreferrer">Terms &amp; Conditions</a> and <a href="https://www.jeddahcentral.com/en/privacy-notice" target="_blank" rel="noopener noreferrer">Privacy &amp; Cookies</a> Notices.</span></div>
+          <div class="optin-row"><input tabindex="882" type="checkbox" id="optin" name="optin" value="y"><label for="optin">I accept to receive email communications from Jeddah Central Development Company</label></div>
+          <div class="actions"><input class="btn" aria-label="Register" tabindex="993" type="button" onclick="javascript:SubmitIt()" name="submit1" value="Register"></div>
+        </form>
+
+<script language="javascript">
+function onbeforesubmit(){ return true; }
+var error;
+var form_lanuage = 'en';
+function setHidden(el, isHidden){ if(!el) return; if(isHidden) el.classList.add('is-hidden'); else el.classList.remove('is-hidden'); }
+function clearInterests(){ var list=document.getElementsByName('interest[]'); for(var i=0;i<list.length;i++){ list[i].checked=false; } }
+function clearSelect(id){ var el=document.getElementById(id); if(el) el.value=""; }
+var lastEngagementValue = null;
+function initDynamicUI(){
+  var et=document.getElementById('engagementType');
+  if(et&&et.addEventListener) et.addEventListener('change', applyConditions);
+
+  var holding=document.getElementsByName('inp_11611');
+  for(var i=0;i<holding.length;i++){
+    if(holding[i].addEventListener) holding[i].addEventListener('change', applyHoldingCompany);
+  }
+
+  applyConditions();
+  applyHoldingCompany();
+}
+function setRequired(id, required){ var el=document.getElementById(id); if(el) el.required = required; }
+function applyConditions(){
+  var et=document.getElementById('engagementType'); var val=et?et.value:"";
+
+  if(lastEngagementValue !== null && lastEngagementValue !== val){
+    clearInterests();
+    clearSelect('investmentSize');
+    clearSelect('realEstateExp');
+    clearSelect('developmentExp');
+    clearSelect('pifEngagement');
+    var d=document.getElementById('interestDesc'); if(d) d.value="";
+  }
+  lastEngagementValue = val;
+
+  var wrapInv=document.getElementById('wrapInvestment');
+  var wrapReal=document.getElementById('wrapRealEstate');
+  var wrapDev=document.getElementById('wrapDevExp');
+  var wrapPif=document.getElementById('wrapPif');
+  var wrapInt=document.getElementById('wrapInterests');
+  var devList=document.getElementById('interestDev');
+  var invList=document.getElementById('interestInv');
+  var opList=document.getElementById('interestOp');
+  var wrapDesc=document.getElementById('wrapDesc');
+
+  setHidden(wrapInv,true);
+  setHidden(wrapReal,true);
+  setHidden(wrapDev,true);
+  setHidden(wrapPif,true);
+  setHidden(wrapInt,true);
+  setHidden(devList,true);
+  setHidden(invList,true);
+  setHidden(opList,true);
+  setHidden(wrapDesc,true);
+
+  setRequired('investmentSize', false);
+  setRequired('realEstateExp', false);
+  setRequired('developmentExp', false);
+  setRequired('pifEngagement', false);
+  setRequired('interestDesc', false);
+
+  if(val!=="1" && val!=="2") clearSelect('investmentSize');
+  if(val!=="1"){ clearSelect('realEstateExp'); clearSelect('developmentExp'); clearSelect('pifEngagement'); }
+  if(val!=="1" && val!=="2" && val!=="3") clearInterests();
+  if(val===""){ var d2=document.getElementById('interestDesc'); if(d2) d2.value=""; }
+
+  if(val==="1"){
+    setHidden(wrapInt,false); setHidden(devList,false);
+    setHidden(wrapInv,false); setHidden(wrapReal,false); setHidden(wrapDev,false); setHidden(wrapPif,false);
+    setHidden(wrapDesc,false);
+    setRequired('investmentSize', true); setRequired('realEstateExp', true); setRequired('developmentExp', true); setRequired('pifEngagement', true); setRequired('interestDesc', true);
+  }
+  else if(val==="2"){
+    setHidden(wrapInt,false); setHidden(invList,false);
+    setHidden(wrapInv,false);
+    setHidden(wrapDesc,false);
+    setRequired('investmentSize', true); setRequired('interestDesc', true);
+  }
+  else if(val==="3"){
+    setHidden(wrapInt,false); setHidden(opList,false);
+    setHidden(wrapDesc,false);
+    setRequired('interestDesc', true);
+  }
+  else if(val==="4"){
+    setHidden(wrapDesc,false);
+    setRequired('interestDesc', true);
+  }
+}
+
+function applyHoldingCompany(){
+  var yes=document.getElementById('holdingYes');
+  var wrap=document.getElementById('wrapDevelopmentType');
+  var input=document.getElementById('developmentType');
+  var isYes = !!(yes && yes.checked);
+
+  setHidden(wrap, !isYes);
+  if(input){
+    input.required = isYes;
+    if(!isYes) input.value = "";
+  }
+}
+function is_holding_valid(){
+  var yes=document.getElementById('holdingYes');
+  var no=document.getElementById('holdingNo');
+  if((!yes || !yes.checked) && (!no || !no.checked)){
+    error+="Holding Company: missing data!\n";
+    return false;
+  }
+  return true;
+}
+function is_development_type_valid(){
+  var yes=document.getElementById('holdingYes');
+  if(yes && yes.checked){
+    return is_required_value("Real Estate Development Type", document.ProfileForm.inp_11613.value);
+  }
+  return true;
+}
+function is_privacy_valid(){ if(document.ProfileForm.privacy && document.ProfileForm.privacy.checked!==true){ error+="Terms & Conditions / Privacy & Cookies: missing confirmation!\n"; return false; } return true; }
+function is_required_value(label, value){ if(value===""){ error+=label+": missing data!\n"; return false; } return true; }
+function is_0_valid(){ var et=document.getElementById('engagementType'); var val=et?et.value:""; if(val!=="1"&&val!=="2"&&val!=="3") return true; var count=0; var Interest=document.getElementsByName('interest[]'); for(var i=0;i<Interest.length;i++){ var ul=(Interest[i].closest?Interest[i].closest('ul'):null); var visible=true; if(ul&&ul.classList&&ul.classList.contains('is-hidden')) visible=false; if(visible&&Interest[i].checked) ++count; } if(count===0){ error+="Interests: please select at least one option!\n"; return false; } return true; }
+function is_investment_valid(){ var val=document.getElementById('engagementType').value; if(val!=="1"&&val!=="2") return true; return is_required_value("Target Investment Size SAR", document.ProfileForm.inp_10715.options[document.ProfileForm.inp_10715.selectedIndex].value); }
+function is_developer_extra_valid(){ var val=document.getElementById('engagementType').value; if(val!=="1") return true; var ok=true; ok=(is_required_value("Number of years in real estate development", document.ProfileForm.inp_11569.options[document.ProfileForm.inp_11569.selectedIndex].value)&&ok); ok=(is_required_value("Experience in large-scale or masterplan developments", document.ProfileForm.inp_11570.options[document.ProfileForm.inp_11570.selectedIndex].value)&&ok); ok=(is_required_value("Have you previously worked with PIF or any of its subsidiaries?", document.ProfileForm.inp_11568.options[document.ProfileForm.inp_11568.selectedIndex].value)&&ok); return ok; }
+function is_desc_valid(){ var val=document.getElementById('engagementType').value; if(val!=="1"&&val!=="2"&&val!=="3"&&val!=="4") return true; return is_required_value("Interest Description", document.ProfileForm.inp_10714.value); }
+function CheckInputs(){
+  syncEstablishmentDate();
+  var check_ok=true; error="Wrong input!\n";
+  check_ok=(is_privacy_valid()&&check_ok);
+  check_ok=(is_required_value("First Name",document.ProfileForm.inp_1.value)&&check_ok);
+  check_ok=(is_required_value("Last Name",document.ProfileForm.inp_2.value)&&check_ok);
+  check_ok=(is_required_value("Email",document.ProfileForm.inp_3.value)&&check_ok);
+  check_ok=(is_required_value("Mobile",document.ProfileForm.inp_37.value)&&check_ok);
+  check_ok=(is_required_value("Company",document.ProfileForm.inp_18.value)&&check_ok);
+  check_ok=(is_required_value("Country or region (office)",document.ProfileForm.inp_14.options[document.ProfileForm.inp_14.selectedIndex].value)&&check_ok);
+  check_ok=(is_required_value("City (office)",document.ProfileForm.inp_43.value)&&check_ok);
+  check_ok=(is_required_value("Head Office Address (National Address for Saudi Companies)",document.ProfileForm.inp_41.value)&&check_ok);
+  check_ok=(is_required_value("URL",document.ProfileForm.inp_25.value)&&check_ok);
+  check_ok=(is_required_value("Year of Establishment",FieldWithName(document.ProfileForm,"inp_11563[]",0).options[FieldWithName(document.ProfileForm,"inp_11563[]",0).selectedIndex].text)&&check_ok);
+  check_ok=(is_required_value("Year of Establishment",FieldWithName(document.ProfileForm,"inp_11563[]",1).options[FieldWithName(document.ProfileForm,"inp_11563[]",1).selectedIndex].value)&&check_ok);
+  check_ok=(is_required_value("Year of Establishment",FieldWithName(document.ProfileForm,"inp_11563[]",2).value)&&check_ok);
+  check_ok=(is_required_value("Main Company’s Activity (according to CR)",document.ProfileForm.inp_11565.options[document.ProfileForm.inp_11565.selectedIndex].value)&&check_ok);
+  check_ok=(is_holding_valid()&&check_ok);
+  check_ok=(is_development_type_valid()&&check_ok);
+  check_ok=(is_required_value("Job Position",document.ProfileForm.inp_17.options[document.ProfileForm.inp_17.selectedIndex].value)&&check_ok);
+  check_ok=(is_required_value("Department",document.ProfileForm.inp_19.options[document.ProfileForm.inp_19.selectedIndex].value)&&check_ok);
+  check_ok=(is_required_value("Engagement Type",document.ProfileForm.inp_8783.options[document.ProfileForm.inp_8783.selectedIndex].value)&&check_ok);
+  check_ok=(is_0_valid()&&check_ok);
+  check_ok=(is_investment_valid()&&check_ok);
+  check_ok=(is_developer_extra_valid()&&check_ok);
+  check_ok=(is_desc_valid()&&check_ok);
+  if(check_ok==false) alert(error); return check_ok;
+}
+function syncEstablishmentDate(){
+  var date = document.getElementById("establishmentDate").value;
+  if(!date) return;
+
+  var parts = date.split("-");
+  var year = parts[0];
+  var month = parseInt(parts[1], 10);
+  var day = parseInt(parts[2], 10);
+
+  FieldWithName(document.ProfileForm,"inp_11563[]",0).innerHTML = '<option value="' + day + '" selected>' + day + '</option>';
+  FieldWithName(document.ProfileForm,"inp_11563[]",1).innerHTML = '<option value="' + month + '" selected>' + month + '</option>';
+  FieldWithName(document.ProfileForm,"inp_11563[]",2).value = year;
+}
+function SubmitIt(){ if(CheckInputs()==true){ if(window.onbeforesubmit) onbeforesubmit(); document.ProfileForm.submit(); } }
+function MailIt(){ if(CheckInputs()){ if((document.ProfileForm.subject.value=='')||(document.ProfileForm.msg.value=='')) alert('Bitte f\u00fcr Sie die Nachrichtenfelder aus!'); else document.ProfileForm.submit(); } }
+function FieldWithName(frm, fieldname, numofield){ if(!numofield) numofield=0; field_count=0; for(i=0;i<frm.elements.length;++i){ if(frm.elements[i].name==fieldname){ if(field_count==numofield) return frm.elements[i]; else field_count++; } } }
+function NumChecked(frm, fieldname){ var count=0; for(i=0;i<frm.elements.length;++i){ if(frm.elements[i].name==fieldname&&frm.elements[i].checked==true) ++count; } return count; }
+function NumSel(field){ var count=0; for(i=0;i<field.length;++i) if(field[i].selected==true) ++count; return count; }
+</script>
+<script language="javascript">
+var multiFields = new Array();
+var dateFields = new Array();
+multiFields["interest[]"] = "interest"
+multiFields["optin"] = "optin"
+var arr_optin = new Array();
+arr_optin["True"] = "y";
+var arr_interest = new Array();
+arr_interest["Residential"] = "1";
+arr_interest["Hospitality"] = "6";
+arr_interest["Mixed Use"] = "27";
+arr_interest["Retail"] = "28";
+arr_interest["Land Purchase"] = "29";
+arr_interest["Land Lease"] = "30";
+arr_interest["Investment Equity"] = "31";
+arr_interest["Other"] = "32";
+arr_interest["Others"] = "32";
+dateFields["inp_11563[]"] = 1;
+</script>
+<script language="javascript" src="https://links.jcd.com.sa/u/nprefill.js" type="text/javascript"></script>
+      </div>
+    </div>
+  </div>
+</body>
+</html>
